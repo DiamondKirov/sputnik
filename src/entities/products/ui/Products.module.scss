@@ -1,0 +1,28 @@
+@use "../../../app/styles/mixins.scss" as *;
+
+.products {
+  --gap: 1.5rem;
+  --cols: 5;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+
+  @include notebook {
+    --cols: 4;
+  }
+  @include table {
+    --cols: 3;
+    --gap: 1rem;
+  }
+  @include mobile {
+    --cols: 2;
+    --gap: 0.5rem;
+  }
+  @include superMobile {
+    --cols: 1;
+  }
+  &__item {
+    width: calc((100% - (var(--gap) * (var(--cols) - 1))) / var(--cols));
+  }
+}

@@ -1,0 +1,47 @@
+@use "../../../app/styles/mixins.scss" as *;
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px #0000001a;
+  background: white;
+  cursor: pointer;
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    transition: var(--transition);
+  }
+  @include hover {
+    .product-card__image {
+      transform: scale(1.03);
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 1rem;
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 1rem;
+      gap: 0.5rem;
+    }
+  }
+
+  &__price {
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  &__origin {
+    font-size: 0.75rem;
+  }
+}

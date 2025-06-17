@@ -1,0 +1,36 @@
+$breakpoint-notebook: 1569.98px;
+$breakpoint-table: 1099.98px;
+$breakpoint-mobile: 769.98px;
+$breakpoint-super-mobile: 567.98px;
+
+@mixin notebook {
+  @media (max-width: #{$breakpoint-notebook}) {
+    @content;
+  }
+}
+
+@mixin table {
+  @media (max-width: #{$breakpoint-table}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin superMobile {
+  @media (max-width: #{$breakpoint-super-mobile}) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
